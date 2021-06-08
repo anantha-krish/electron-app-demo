@@ -1,0 +1,57 @@
+{
+  "name": "asygdm-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "main": "./electron/main.js",
+  "build": {
+    "appId": "com.ibsplc.asygdm",
+    "artifactName": "AsyGdm-Setup-${version}.${ext}",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.0",
+    "os-utils": "0.0.14",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "build-electron":"copy.bat",
+    "package": "electron-builder build --win -c.extraMetadata.main=build/electron/main.js --publish never"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^11.2.0",
+    "electron-builder": "^22.9.1",
+    "node-sass": "^4.14.1"
+  }
+}
